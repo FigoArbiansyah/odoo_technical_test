@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="inherit_res_partner_views_contact_approval" model="ir.ui.view">
+    <field name="name">res.partner.view.form.inherit</field>
+    <field name="model">res.partner</field>
+    <field name="inherit_id" ref="base.view_partner_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//field[@name='vat']" position="before">
+        <field name="approver_id" readonly="1" />
+      </xpath>
+      <xpath expr="//sheet" position="before">
+        <header>
+          <field name="state" widget="statusbar" />
+        </header>
+      </xpath>
+    </field>
+  </record>
+
+</odoo>
