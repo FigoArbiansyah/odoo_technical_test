@@ -18,7 +18,7 @@ Contact Approval
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'sale'],
+    'depends': ['base', 'sale', 'purchase'],
 
     # always loaded
     'data': [
@@ -28,6 +28,7 @@ Contact Approval
         'views/templates.xml',
         'views/res_partner_inherit_views.xml',
         'views/sale_order_inherit_views.xml',
+        'views/purchase_order_inherit_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
