@@ -15,3 +15,14 @@ class ResPartner(models.Model):
                     count += 1
             rent.count_rent = count
             # rent.count_rent = sum(1 for record in self if record.is_rent)
+
+    def action_open_list_rent(self):
+        return {
+            'type': 'ir.actions.act_window',
+            'name': 'Rented Products',
+            'view_mode': 'kanban',
+            'res_model': 'product.template',
+            'views': [(self.env.ref('product.product_template_kanban_view').id, 'kanban')],
+            'domain': ['|', ('is_rent', '=', True), ('is_rent', '=', 1)],
+            # 'context': {'default_is_rent': True},
+        }
