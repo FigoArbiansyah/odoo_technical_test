@@ -12,6 +12,9 @@
       <xpath expr="//sheet" position="before">
         <header>
           <field name="state" widget="statusbar" />
+          <button name="action_approve" type="object" string="Approve" icon="fa-check" invisible="state != 'draft'" class="btn-primary"/>
+          <button name="action_cancel" type="object" string="Cancel" icon="fa-close" invisible="state != 'draft'" class="btn-primary"/>
+          <button name="action_reset" type="object" string="Reset" icon="fa-undo" invisible="state == 'draft'" class="btn-primary"/>
         </header>
       </xpath>
     </field>
