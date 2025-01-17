@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "sales_rental",
+    'name': "Sales Rental",
 
-    'summary': "Short (1 phrase/line) summary of the module's purpose",
+    'summary': "Sales Rental",
 
     'description': """
-Long description of module's purpose
+Sales Rental
     """,
 
-    'author': "My Company",
+    'author': "Figo Arbiansyah",
     'website': "https://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -18,17 +18,19 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'sale'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'views/product_template_inherit_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
+    'application': True
 }
 
