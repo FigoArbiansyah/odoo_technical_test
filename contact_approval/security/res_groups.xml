@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <data>
+  
+    <record id="contact_approval_manager" model="res.groups">
+      <field name="name">Contact Approval Manager</field>
+    </record>
+  
+  </data>
+  
+
+</odoo>
