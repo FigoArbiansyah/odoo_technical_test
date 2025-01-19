@@ -9,12 +9,7 @@ class ResPartner(models.Model):
     @api.depends('is_rent')
     def _compute_count_rent(self):
         for rent in self:
-            count = 0
-            for record in self:
-                if record.is_rent:
-                    count += 1
-            rent.count_rent = count
-            # rent.count_rent = sum(1 for record in self if record.is_rent)
+            rent.count_rent = self.env['product.template'].search_count([('is_rent', '=', True)])
 
     def action_open_list_rent(self):
         return {
@@ -24,5 +19,5 @@ class ResPartner(models.Model):
             'res_model': 'product.template',
             'views': [(self.env.ref('product.product_template_kanban_view').id, 'kanban')],
             'domain': ['|', ('is_rent', '=', True), ('is_rent', '=', 1)],
-            # 'context': {'default_is_rent': True},
+            'context': {'default_is_rent': True},
         }
