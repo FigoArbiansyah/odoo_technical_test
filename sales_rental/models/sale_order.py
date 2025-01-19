@@ -1,4 +1,5 @@
 from odoo import models, fields, api, _
+from datetime import datetime
 
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
@@ -22,6 +23,15 @@ class SaleOrder(models.Model):
                 rent.duration_days = max(duration.days, 0)  # Agar tidak mendapatkan negatif
             else:
                 rent.duration_days = 0
+
+    def action_confirm(self):
+        res = super(SaleOrder, self).action_confirm()
+        for order in self:
+            if order.is_rental_order:
+                now = fields.Datetime.now()
+                if order.rental_start_date <= now <= order.rental_return_date:
+                    order.rental_status = 'reserved'
+        return res
 
     @api.onchange('rental_return_date')
     def _onchange_rental_return_date(self):
