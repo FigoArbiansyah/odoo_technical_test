@@ -27,6 +27,10 @@ Sales Rental
         'views/templates.xml',
         'views/product_template_inherit_views.xml',
         # 'views/product_template_inherit_kanban_views.xml',
+        'views/sale_order_views.xml',
+        'views/rental_menu.xml',
+        'views/sale_order_inherit_tree_views.xml',
+        'views/sale_order_inherit_form_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

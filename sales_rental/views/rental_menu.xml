@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <menuitem
+    id="rental_root_menu"
+    name="Rental"/>
+  <menuitem
+    id="rental_app_level_menu"
+    name="Orders"
+    parent="rental_root_menu"/>
+  <menuitem
+    id="rental_order_menu"
+    name="Orders"
+    parent="rental_app_level_menu"
+    action="rental_sale_order_action"/>
+
+</odoo>

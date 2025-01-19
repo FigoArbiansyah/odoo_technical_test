@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+  <record id="inherit_sale_order_form_views_sales_rental" model="ir.ui.view">
+    <field name="name">sale.order.view.form.inherit</field>
+    <field name="model">sale.order</field>
+    <field name="inherit_id" ref="sale.view_order_form"/>
+    <field name="arch" type="xml">
+      <xpath expr="//group[@name='partner_details']" position="inside">
+        <field name="rental_start_date"/>
+        <field name="rental_return_date"/>
+        <field name="duration_days" readonly="1"/>
+        <field name="rental_status"/>
+      </xpath>
+    </field>
+  </record>
+
+</odoo>
