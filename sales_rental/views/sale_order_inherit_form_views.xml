@@ -17,6 +17,9 @@
         <button name="action_reserve" string="Reserve" type="object" class="btn-primary" invisible="state != 'sales_orders' and rental_status != 'draft'"/>
         <button name="action_turn_in" string="Turn In" type="object" class="btn-primary" invisible="rental_status != 'reserved'"/>
       </xpath>
+      <xpath expr="//field[@name='product_template_id']" position="attributes">
+        <attribute name="domain">[('sale_ok', '=', True), ('is_rent', '=', True)]</attribute>
+      </xpath>
     </field>
   </record>
 
