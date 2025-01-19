@@ -13,7 +13,7 @@
         </span>
       </xpath>
       <xpath expr="//div[@name='button_box']" position="inside">
-        <button name="action_open_list_rent" type="object" icon="fa-calendar" class="oe_stat_button" invisible="is_rent == 0">
+        <button name="action_open_sale_order" type="object" icon="fa-calendar" class="oe_stat_button" invisible="is_rent == 0">
           <field string="In Rental" name="count_rent" widget="statinfo" field_id="count_rent_1"/>
         </button>
       </xpath>
