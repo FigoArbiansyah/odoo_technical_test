@@ -13,6 +13,10 @@
         <field name="duration_days" readonly="1" invisible="is_rental_order != True" required="is_rental_order == True"/>
         <field name="rental_status" invisible="is_rental_order != True" required="is_rental_order == True"/>
       </xpath>
+      <xpath expr="//field[@name='state']" position="before">
+        <button name="action_reserve" string="Reserve" type="object" class="btn-primary" invisible="state != 'sales_orders' and rental_status != 'draft'"/>
+        <button name="action_turn_in" string="Turn In" type="object" class="btn-primary" invisible="rental_status != 'reserved'"/>
+      </xpath>
     </field>
   </record>
 

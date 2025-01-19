@@ -33,6 +33,14 @@ class SaleOrder(models.Model):
                     order.rental_status = 'reserved'
         return res
 
+    def action_reserve(self):
+        for order in self:
+            order.rental_status = 'reserved'
+
+    def action_turn_in(self):
+        for order in self:
+            order.rental_status = 'returned'
+
     @api.onchange('rental_return_date')
     def _onchange_rental_return_date(self):
         isPriorThanStartDate = self.rental_return_date >= self.rental_start_date
